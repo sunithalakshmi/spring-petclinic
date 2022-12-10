@@ -1,5 +1,4 @@
 pipeline {
-  agent any
   
   stages {
     stage('code checkin') {
@@ -12,9 +11,19 @@ pipeline {
         sh 'mvn compile'
       }
     }
-    stage('test') {
+    stage('code test') {
       steps {
         sh 'mvn test'
+      }
+    }
+    stage('code build') {
+      steps {
+        sh 'mvn package'
+      }
+    }
+    stage('code deploy') {
+      steps {
+        sh 'java -jar workspace/pipeline/target/spring-petclinic-2.7.3.jar'
       }
     }
   }
