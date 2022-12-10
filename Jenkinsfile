@@ -7,10 +7,14 @@ pipeline {
         git branch: 'main', url: 'https://github.com/sunithalakshmi/spring-petclinic.git'
       }
     }
-    stage('code build') {
+    stage('code compile') {
       steps {
-        sh 'mkdir test'
-        sh 'cd test'
+        sh 'mvn compile'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'mvn test'
       }
     }
   }
