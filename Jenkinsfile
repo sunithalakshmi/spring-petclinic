@@ -1,5 +1,5 @@
 pipeline {
-  label suni
+  label 'suni'
   
   stages {
     stage('code checkin') {
