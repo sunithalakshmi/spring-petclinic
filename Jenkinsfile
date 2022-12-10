@@ -9,7 +9,8 @@ pipeline {
     }
     stage('code build') {
       steps {
-        sh 'mvn package'
+        sh 'mkdir test'
+        sh 'cd test'
       }
     }
   }
