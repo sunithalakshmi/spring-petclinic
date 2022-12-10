@@ -1,4 +1,5 @@
 pipeline {
+  label suni
   
   stages {
     stage('code checkin') {
@@ -23,7 +24,7 @@ pipeline {
     }
     stage('code deploy') {
       steps {
-        sh 'java -jar workspace/pipeline/target/spring-petclinic-2.7.3.jar'
+        sh 'java -jar /home/ubuntu/workspace/pipeline/target/spring-petclinic-2.7.3.jar'
       }
     }
   }
