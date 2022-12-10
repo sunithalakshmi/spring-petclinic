@@ -1,5 +1,5 @@
 pipeline {
-  agent 'suni'
+  agent  label 'suni'
   
   stages {
     stage('code checkin') {
